@@ -14,7 +14,7 @@
 
 ### 开发环境搭建
 
-可在项目根目录下执行 `./install.sh` 快速搭建开发环境。如要了解具体的步骤，请看如下文档。
+linux和mac下可在项目根目录下执行 `./install.sh` 快速搭建开发环境。如要了解具体的步骤，请看如下文档。
 
 **具体步骤如下：**
 
@@ -96,7 +96,7 @@ gateway-admin可动态调整gateway-web的路由策略，测试前请先配置�
 
 * 6.前端项目
 
-确确保gateway-web、organization、authorization-server、authentication-server服务启动，然后启动
+确确保gateway-admin、gateway-web、organization、authorization-server、authentication-server服务启动，然后启动
 
 [前端项目](https://github.com/zhoutaoo/SpringCloud-Admin)（该项目目前还在开发中）
 
@@ -122,19 +122,19 @@ gateway-admin可动态调整gateway-web的路由策略，测试前请先配置�
 ### 功能预览
 
 **用户管理**
- [用户管理](https://user-images.githubusercontent.com/3946731/67155765-93d5ca00-f347-11e9-8114-44ac5ba3d05b.png)
+ ![用户管理](https://user-images.githubusercontent.com/3946731/67155765-93d5ca00-f347-11e9-8114-44ac5ba3d05b.png)
  
  **角色管理**
- [角色管理](https://user-images.githubusercontent.com/3946731/67155755-7c96dc80-f347-11e9-9b0a-e13b51167422.png)
+ ![角色管理](https://user-images.githubusercontent.com/3946731/67155755-7c96dc80-f347-11e9-9b0a-e13b51167422.png)
  
  **服务容错**
- [服务容错](https://user-images.githubusercontent.com/3946731/67155757-88829e80-f347-11e9-8750-d5c4eef7730e.png)
+ ![服务容错](https://user-images.githubusercontent.com/3946731/67155757-88829e80-f347-11e9-8750-d5c4eef7730e.png)
  
  **API文档**
- [API文档](https://user-images.githubusercontent.com/3946731/67155763-8e787f80-f347-11e9-8347-ab2aeda6f7d6.png)
+ ![API文档](https://user-images.githubusercontent.com/3946731/67155763-8e787f80-f347-11e9-8347-ab2aeda6f7d6.png)
  
  **组织架构管理**
- [组织架构管理](https://user-images.githubusercontent.com/3946731/67155751-69840c80-f347-11e9-8d88-e6fa4d6b7d23.png)
+ ![组织架构管理](https://user-images.githubusercontent.com/3946731/67155751-69840c80-f347-11e9-8d88-e6fa4d6b7d23.png)
 
 ### 基础服务
 
@@ -198,6 +198,16 @@ gateway-admin可动态调整gateway-web的路由策略，测试前请先配置�
 
 请入群 [请戳这里](https://github.com/zhoutaoo/SpringCloud/wiki) 加群主微信。
 
+### 请作者喝饮料
+
+如果你觉的有帮助到您，可以请作者喝饮料，这样更有动力，谢谢。
+
+<p align="left">
+  <img width="300" src="https://user-images.githubusercontent.com/3946731/67401177-58eec300-f5e1-11e9-97e6-9ae29e3523e0.jpeg">
+  
+  <img width="300" src="https://user-images.githubusercontent.com/3946731/67401198-60ae6780-f5e1-11e9-8c30-c12bd598011b.jpeg">
+</p>
+
 ### 学习交流
 
 EMail：zhoutaoo@foxmail.com
@@ -219,3 +229,7 @@ EMail：zhoutaoo@foxmail.com
 2. 怎么输入或操作的得到了什么结果？ 截图，日志
 
 3. 哪里不明白或有什么疑问 ？
+
+## Stargazers over time
+ 
+[![Stargazers over time](https://starchart.cc/zhoutaoo/SpringCloud.svg)](https://starchart.cc/zhoutaoo/SpringCloud)
