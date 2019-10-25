@@ -1,0 +1,40 @@
+# cd /d D:\github\SpringCloud\docker-stack-deploy
+# docker stack deploy --with-registry-auth -c docker-compose.mysql.yml sc
+# for /F %i in ('docker ps -q -f "name=sc-mysql"') do (set CONTAINER_ID=%i)
+# docker exec -it %CONTAINER_ID% mysql -uroot -proot -e "show databases;"
+version: "3"
+services:
+  mysql:
+    image: mysql-win:5.7.27
+    networks:
+      - default
+    ports:
+      - "3306:3306"
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=root123
+    env_file:
+      - .env
+    volumes:
+      - "/host_mnt/d/github/SpringCloud/data/mysql:/var/lib/mysql"
+    deploy:
+      # 在签 host=dev 的节点部署
+      labels:
+        host: dev
+      replicas: 1
+      # 限制资源
+      # resources:
+      #   limits:
+      #     cpus: "0.50"
+      #     memory: 50M
+      #   reservations:
+      #     cpus: "0.10"
+      #     memory: 20M
+      restart_policy:
+        condition: on-failure
+
+networks: 
+  default:
+    # 使用现有 swarm overlay 网络
+    external:
+      name: sc-net
