@@ -1,7 +1,7 @@
 # cd /d D:\github\SpringCloud\docker-stack-deploy
 # docker stack deploy --with-registry-auth -c docker-compose.mysql.yml sc
-# for /F %i in ('docker ps -q -f "name=sc-mysql"') do (set CONTAINER_ID=%i)
-# docker exec -it %CONTAINER_ID% mysql -uroot -proot -e "show databases;"
+# for /F %i in ('docker ps -q -f "name=sc_mysql"') do (set CONTAINER_ID=%i)
+# docker exec -it %CONTAINER_ID% mysql -uroot -proot123 -e "show databases;"
 version: "3"
 services:
   mysql:

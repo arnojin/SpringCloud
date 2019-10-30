@@ -1,0 +1,27 @@
+# cd /d D:\github\SpringCloud\docker-stack-deploy
+# docker stack deploy --with-registry-auth -c docker-compose.rabbitmq.yml sc
+# for /F %i in ('docker ps -q -f "name=sc_rabbitmq"') do (set CONTAINER_ID=%i)
+# docker exec -it %CONTAINER_ID% rabbitmqctl status
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.0-alpine
+    volumes:
+      - "/host_mnt/d/github/SpringCloud/data/rabbitmq:/var/lib/rabbitmq/mnesia"
+    ports:
+      - "5672:5672"
+    networks:
+      - default
+    env_file:
+      - .env
+    deploy:
+      labels:
+        host: dev
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  default:
+    external:
+      name: sc-net

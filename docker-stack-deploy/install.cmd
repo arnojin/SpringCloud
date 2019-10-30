@@ -36,6 +36,19 @@ docker exec -it %CONTAINER_ID% nginx -t
 docker exec -it %CONTAINER_ID% nginx -s reload
 curl -L www.springcloud.cn
 
+:: 部署 Rabbit MQ
+cd /d %WORK_PATH%
+docker stack deploy --with-registry-auth -c docker-compose.rabbitmq.yml sc
+for /F %%i in ('docker ps -q -f "name=sc_rabbitmq"') do (set CONTAINER_ID=%%i)
+docker exec -it %CONTAINER_ID% rabbitmqctl status
+curl -L --output - localhost:5672
+
+:: 部署 Redis
+cd /d %WORK_PATH%
+docker stack deploy --with-registry-auth -c docker-compose.redis.yml sc
+for /F %%i in ('docker ps -q -f "name=sc_redis"') do (set CONTAINER_ID=%%i)
+docker exec -it %CONTAINER_ID% redis-cli info
+
 :: 还原 活动代码页
 pause
 chcp 936

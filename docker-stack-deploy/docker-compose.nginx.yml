@@ -1,8 +1,7 @@
-# docker stack ^
-#     deploy ^
-#     --with-registry-auth ^
-#     -c c:/data/config/local/nginx/docker-compose.yml ^
-#     dev
+# cd /d D:\github\SpringCloud\docker-stack-deploy
+# docker stack deploy --with-registry-auth -c docker-compose.nginx.yml sc
+# for /F %i in ('docker ps -q -f "name=sc_nginx"') do (set CONTAINER_ID=%i)
+# docker exec -it %CONTAINER_ID% nginx -t
 version: "3"
 services:
   nginx:
