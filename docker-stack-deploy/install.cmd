@@ -14,6 +14,14 @@ if %errorLevel% == 0 (
 
 set WORK_PATH=D:\github\SpringCloud\docker-stack-deploy
 
+:: 获取镜像文件
+docker pull mysql:5.7.27
+docker pull nginx:1.15.12
+docker pull rabbitmq:3.8.0-alpine
+docker pull redis:5.0.6-alpine
+docker pull nacos/nacos-server:1.1.3
+docker pull prom/prometheus:v2.13.1
+
 :: 部署 MySQL
 cd /d %WORK_PATH%\mysql
 docker build -t mysql-win:5.7.27 .
@@ -41,7 +49,6 @@ cd /d %WORK_PATH%
 docker stack deploy --with-registry-auth -c docker-compose.rabbitmq.yml sc
 for /F %%i in ('docker ps -q -f "name=sc_rabbitmq"') do (set CONTAINER_ID=%%i)
 docker exec -it %CONTAINER_ID% rabbitmqctl status
-curl -L --output - localhost:5672
 
 :: 部署 Redis
 cd /d %WORK_PATH%
