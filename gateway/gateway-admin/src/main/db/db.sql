@@ -1,7 +1,7 @@
 SET NAMES utf8;
 
 DROP DATABASE IF EXISTS sc_gateway;
-CREATE DATABASE sc_gateway default charset utf8mb4;
+CREATE DATABASE sc_gateway DEFAULT CHARSET utf8mb4;
 
 USE sc_gateway;
 
@@ -53,5 +53,14 @@ VALUES
  '[{"name":"StripPrefix","args":{"parts":"1"}}]',
  100,
  '系统管理相关接口',
+ 'Y', now(), now(), 'system', 'system'),
+(104,
+ 'gateway-admin',
+ 'lb://gateway-admin:8445',
+ '[{"name":"Path","args":{"pattern":"/gateway-admin/**"}}]',
+ '[{"name":"StripPrefix","args":{"parts":"1"}}]',
+ 100,
+ '网关管理相关接口',
  'Y', now(), now(), 'system', 'system')
+
 
